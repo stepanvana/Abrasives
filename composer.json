@@ -1,0 +1,17 @@
+{
+	"autoload": {
+		"psr-4": {
+			"orders\\": "classes/orders",
+			"products\\": "classes/products",
+			"users\\": "classes/users",
+			"customers\\": "classes/customers",
+			"admin\\customers\\": "admin/classes/customers",
+			"admin\\messages\\": "admin/classes/messages",
+			"admin\\orders\\": "admin/classes/orders",
+			"admin\\products\\": "admin/classes/products",
+			"admin\\search\\": "admin/classes/search",
+			"admin\\statistics\\": "admin/classes/statistics",
+			"admin\\users\\": "admin/classes/users"
+		}
+	}
+}

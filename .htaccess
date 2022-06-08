@@ -1,0 +1,52 @@
+ErrorDocument 404 /not-found.php
+
+
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkty/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+)-([0-9a-zA-Z_-]+) produkty.php?category=$1&subcategory=$2&sort=$3 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkty/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) produkty.php?category=$1&subcategory=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkty/([0-9a-zA-Z_-]+)-([0-9a-zA-Z_-]+) produkty.php?category=$1&sort=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkty/([0-9a-zA-Z_-]+) produkty.php?category=$1 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkty-([0-9a-zA-Z_-]+) produkty.php?sort=$1 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^produkt/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) produkt.php?id=$1&url=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^vyhledavani/([0-9a-zA-Z_-]+)/([0-9a-zA-Z_-]+) vyhledavani.php?search=$1&sort=$2 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^vyhledavani/([0-9a-zA-Z_-]+) vyhledavani.php?search=$1 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+Rewriterule ^zakaznik/objednavka/([0-9a-zA-Z_-]+) zakaznik/objednavka.php?id=$1 [NC,L]
+
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^ %{REQUEST_URI}.php [L]
